@@ -1,0 +1,28 @@
+Package: earthquake
+Type: Package
+Title: Package for visualization of NOAA earthquakes
+Version: 0.1.0
+Authors@R: c(
+	person("Miguel Angel", "Regueira", email="regueira.caumel@gmail.com", role=c("aut","cre"))
+	)
+Author: Miguel Angel Regueira [aut, cre]
+Maintainer: Miguel Angel Regueira <regueira.caumel@gmail.com>
+Description: This package is suited for cleaning and visualization of NOAA
+    earthquake data. It is able to create earthquake timelines and uses leaflet
+    maps to show eq locations.
+License: GPL-3 + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 6.0.1
+Imports: 
+    dplyr,
+    ggplot2,
+    leaflet,
+    lubridate,
+    readr,
+    tools
+VignetteBuilder: knitr
