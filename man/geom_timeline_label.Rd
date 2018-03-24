@@ -54,6 +54,8 @@ the default plot specification, e.g. \code{\link{borders}}.}
 \item{n_max}{An integer. If used, it only plots the labels for the
 \code{n_max} largest earthquakes in the selected group in the timeline}
 
+\item{angle}{Anglo to represent label text, default 45º}
+
 \item{...}{other arguments passed on to \code{\link{layer}}. These are
 often aesthetics, used to set an aesthetic to a fixed value, like
 \code{color = "red"} or \code{size = 3}. They may also be parameters
