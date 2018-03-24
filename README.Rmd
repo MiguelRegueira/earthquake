@@ -25,7 +25,7 @@ Package for visualization of NOAA earthquakes. It processes data from [NOAA data
 
 To install this package to run on your system, please first install and load the devtools package. Then you may install and load this package thus:
 
-```{r install, echo = FALSE}
+```{r install, echo = FALSE, eval=FALSE}
 require(devtools)
 devtools::install_github('eregmig/earthquake', build_vignettes = TRUE)
 library(earthquake)
@@ -36,6 +36,7 @@ library(earthquake)
 This package allows you to get and clean the latest earthquake data from the NOAA's Webpage so as to prepare it for analysis:
 
 ```{r load_data, echo = FALSE}
+library(earthquake)
 library(dplyr)
 library(lubridate)
 data <- eq_clean_data()
