@@ -25,5 +25,7 @@ Imports:
     lubridate,
     readr,
     tools,
-    purrr
+    purrr,
+    scales,
+    magrittr
 VignetteBuilder: knitr
