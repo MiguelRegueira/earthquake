@@ -5,6 +5,7 @@
 #'
 #' @param n_max An integer. If used, it only plots the labels for the
 #' \code{n_max} largest earthquakes in the selected group in the timeline
+#' @param angle Anglo to represent label text, default 45º
 #' @param xmin A Posixct date to filter data with date >= xmin
 #' @param xmax A Posixct date to filter data with date < xmax
 #'
