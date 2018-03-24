@@ -6,6 +6,11 @@
 \usage{
 theme_timeline(base_size = 11, base_family = "")
 }
+\arguments{
+\item{base_size}{Default \code{11}, base size of text}
+
+\item{base_family}{Default \code{sans}, text family}
+}
 \value{
 Nothing
 }

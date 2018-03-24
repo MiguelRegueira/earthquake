@@ -5,12 +5,13 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 
-## ----install-------------------------------------------------------------
-require(devtools)
-devtools::install_github('eregmig/earthquake', build_vignettes = TRUE)
-library(earthquake)
+## ----install, eval=FALSE-------------------------------------------------
+#  require(devtools)
+#  devtools::install_github('eregmig/earthquake', build_vignettes = TRUE)
+#  library(earthquake)
 
-## ----load_data-----------------------------------------------------------
+## ----load_data, echo=FALSE-----------------------------------------------
+library(earthquake)
 library(dplyr)
 library(lubridate)
 data <- eq_clean_data()

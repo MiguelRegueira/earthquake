@@ -5,6 +5,9 @@
 #' @return Nothing
 #' @export
 #'
+#' @param base_size Default \code{11}, base size of text
+#' @param base_family Default \code{sans}, text family
+#'
 #' @importFrom ggplot2 %+replace%
 #'
 #' @examples

@@ -78,58 +78,51 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Installation</h2>
 <p>To install this package to run on your system, please first install and load the devtools package. Then you may install and load this package thus:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(devtools)
-<span class="co">#&gt; Loading required package: devtools</span>
 devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">'eregmig/earthquake'</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; Downloading GitHub repo eregmig/earthquake@master</span>
-<span class="co">#&gt; from URL https://api.github.com/repos/eregmig/earthquake/zipball/master</span>
-<span class="co">#&gt; Installation failed: Not Found (404)</span>
 <span class="kw">library</span>(earthquake)</code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2>Usage</h2>
 <p>This package allows you to get and clean the latest earthquake data from the NOAA’s Webpage so as to prepare it for analysis:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'dplyr'</span>
-<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     filter, lag</span>
-<span class="co">#&gt; The following objects are masked from 'package:base':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-<span class="kw">library</span>(lubridate)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'lubridate'</span>
-<span class="co">#&gt; The following object is masked from 'package:base':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     date</span>
-data &lt;-<span class="st"> </span><span class="kw">eq_clean_data</span>()
-<span class="co">#&gt; Parsed with column specification:</span>
-<span class="co">#&gt; cols(</span>
-<span class="co">#&gt;   .default = col_integer(),</span>
-<span class="co">#&gt;   FLAG_TSUNAMI = col_character(),</span>
-<span class="co">#&gt;   SECOND = col_character(),</span>
-<span class="co">#&gt;   EQ_PRIMARY = col_character(),</span>
-<span class="co">#&gt;   EQ_MAG_MW = col_character(),</span>
-<span class="co">#&gt;   EQ_MAG_MS = col_character(),</span>
-<span class="co">#&gt;   EQ_MAG_MB = col_character(),</span>
-<span class="co">#&gt;   EQ_MAG_ML = col_double(),</span>
-<span class="co">#&gt;   EQ_MAG_MFA = col_character(),</span>
-<span class="co">#&gt;   EQ_MAG_UNK = col_character(),</span>
-<span class="co">#&gt;   COUNTRY = col_character(),</span>
-<span class="co">#&gt;   STATE = col_character(),</span>
-<span class="co">#&gt;   LOCATION_NAME = col_character(),</span>
-<span class="co">#&gt;   LATITUDE = col_character(),</span>
-<span class="co">#&gt;   LONGITUDE = col_character(),</span>
-<span class="co">#&gt;   DEATHS = col_character(),</span>
-<span class="co">#&gt;   MISSING = col_character(),</span>
-<span class="co">#&gt;   INJURIES = col_character(),</span>
-<span class="co">#&gt;   DAMAGE_MILLIONS_DOLLARS = col_character(),</span>
-<span class="co">#&gt;   TOTAL_DEATHS = col_character(),</span>
-<span class="co">#&gt;   TOTAL_MISSING = col_character()</span>
-<span class="co">#&gt;   # ... with 2 more columns</span>
-<span class="co">#&gt; )</span>
-<span class="co">#&gt; See spec(...) for full column specifications.</span></code></pre></div>
+<pre><code>#&gt; 
+#&gt; Attaching package: 'dplyr'
+#&gt; The following objects are masked from 'package:stats':
+#&gt; 
+#&gt;     filter, lag
+#&gt; The following objects are masked from 'package:base':
+#&gt; 
+#&gt;     intersect, setdiff, setequal, union
+#&gt; 
+#&gt; Attaching package: 'lubridate'
+#&gt; The following object is masked from 'package:base':
+#&gt; 
+#&gt;     date
+#&gt; Parsed with column specification:
+#&gt; cols(
+#&gt;   .default = col_integer(),
+#&gt;   FLAG_TSUNAMI = col_character(),
+#&gt;   SECOND = col_character(),
+#&gt;   EQ_PRIMARY = col_character(),
+#&gt;   EQ_MAG_MW = col_character(),
+#&gt;   EQ_MAG_MS = col_character(),
+#&gt;   EQ_MAG_MB = col_character(),
+#&gt;   EQ_MAG_ML = col_double(),
+#&gt;   EQ_MAG_MFA = col_character(),
+#&gt;   EQ_MAG_UNK = col_character(),
+#&gt;   COUNTRY = col_character(),
+#&gt;   STATE = col_character(),
+#&gt;   LOCATION_NAME = col_character(),
+#&gt;   LATITUDE = col_character(),
+#&gt;   LONGITUDE = col_character(),
+#&gt;   DEATHS = col_character(),
+#&gt;   MISSING = col_character(),
+#&gt;   INJURIES = col_character(),
+#&gt;   DAMAGE_MILLIONS_DOLLARS = col_character(),
+#&gt;   TOTAL_DEATHS = col_character(),
+#&gt;   TOTAL_MISSING = col_character()
+#&gt;   # ... with 2 more columns
+#&gt; )
+#&gt; See spec(...) for full column specifications.</code></pre>
 <p>Now that data can be visualize for a couple of countries like Greece and Italy over a period of time from 2000 to 2010 and show the names of the 2 locations with the worst earthquakes:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 data <span class="op">%&gt;%</span><span class="st"> </span>
