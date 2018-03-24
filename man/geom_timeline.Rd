@@ -68,7 +68,8 @@ be used to group data by a selected variable (for example country).
 \dontrun{
 data \%>\% eq_clean_data() \%>\%
    dplyr::filter(COUNTRY \%in\% c("GREECE", "ITALY")) \%>\%
-   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY, magnitude = EQ_PRIMARY, label = LOCATION_NAME)) +
+   ggplot(aes(x = DATE, y = COUNTRY, color = TOTAL_DEATHS, size = EQ_PRIMARY,
+   magnitude = EQ_PRIMARY, label = LOCATION_NAME)) +
    geom_timeline(xmin = "2000-01-01", xmax = "2010-01-01") +
    theme_timeline()
 }

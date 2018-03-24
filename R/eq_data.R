@@ -1,3 +1,6 @@
+globalVariables(c("MONTH", "DAY","HOUR","MINUTE", "LOCATION_NAME",
+                  "EQ_PRIMARY", "LATITUDE", "LONGITUDE", "SECOND",
+                  "TOTAL_DEATHS", "YEAR", "."))
 #' Load and cleanup NAOO earthquakes information
 #'
 #' Load and cleanup NAOO earthquakes information
@@ -35,7 +38,8 @@ eq_clean_data <- function(fileName = system.file("extdata/signif.txt", package =
 
   lubridate::year(data$DATE) <- data$YEAR
 
-  data <- dplyr::select(data, DATE, COUNTRY, LATITUDE, LONGITUDE, LOCATION_NAME, EQ_PRIMARY, TOTAL_DEATHS)
+  data <- dplyr::select_(data, "DATE", "COUNTRY", "LATITUDE", "LONGITUDE",
+                         "LOCATION_NAME", "EQ_PRIMARY", "TOTAL_DEATHS")
 }
 
 #' Clean Location information
