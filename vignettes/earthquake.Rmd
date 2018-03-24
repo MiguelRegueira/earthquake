@@ -35,7 +35,7 @@ library(earthquake)
 
 This package allows you to get and clean the latest earthquake data from the NOAA's Webpage so as to prepare it for analysis:
 
-```{r load_data, echo=FALSE}
+```{r load_data, message=FALSE}
 library(earthquake)
 library(dplyr)
 library(lubridate)

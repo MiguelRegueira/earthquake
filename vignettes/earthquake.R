@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 #  devtools::install_github('eregmig/earthquake', build_vignettes = TRUE)
 #  library(earthquake)
 
-## ----load_data, echo=FALSE-----------------------------------------------
+## ----load_data, message=FALSE--------------------------------------------
 library(earthquake)
 library(dplyr)
 library(lubridate)

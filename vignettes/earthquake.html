@@ -84,45 +84,10 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <div id="usage" class="section level2">
 <h2>Usage</h2>
 <p>This package allows you to get and clean the latest earthquake data from the NOAA’s Webpage so as to prepare it for analysis:</p>
-<pre><code>#&gt; 
-#&gt; Attaching package: 'dplyr'
-#&gt; The following objects are masked from 'package:stats':
-#&gt; 
-#&gt;     filter, lag
-#&gt; The following objects are masked from 'package:base':
-#&gt; 
-#&gt;     intersect, setdiff, setequal, union
-#&gt; 
-#&gt; Attaching package: 'lubridate'
-#&gt; The following object is masked from 'package:base':
-#&gt; 
-#&gt;     date
-#&gt; Parsed with column specification:
-#&gt; cols(
-#&gt;   .default = col_integer(),
-#&gt;   FLAG_TSUNAMI = col_character(),
-#&gt;   SECOND = col_character(),
-#&gt;   EQ_PRIMARY = col_character(),
-#&gt;   EQ_MAG_MW = col_character(),
-#&gt;   EQ_MAG_MS = col_character(),
-#&gt;   EQ_MAG_MB = col_character(),
-#&gt;   EQ_MAG_ML = col_double(),
-#&gt;   EQ_MAG_MFA = col_character(),
-#&gt;   EQ_MAG_UNK = col_character(),
-#&gt;   COUNTRY = col_character(),
-#&gt;   STATE = col_character(),
-#&gt;   LOCATION_NAME = col_character(),
-#&gt;   LATITUDE = col_character(),
-#&gt;   LONGITUDE = col_character(),
-#&gt;   DEATHS = col_character(),
-#&gt;   MISSING = col_character(),
-#&gt;   INJURIES = col_character(),
-#&gt;   DAMAGE_MILLIONS_DOLLARS = col_character(),
-#&gt;   TOTAL_DEATHS = col_character(),
-#&gt;   TOTAL_MISSING = col_character()
-#&gt;   # ... with 2 more columns
-#&gt; )
-#&gt; See spec(...) for full column specifications.</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(earthquake)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(lubridate)
+data &lt;-<span class="st"> </span><span class="kw">eq_clean_data</span>()</code></pre></div>
 <p>Now that data can be visualize for a couple of countries like Greece and Italy over a period of time from 2000 to 2010 and show the names of the 2 locations with the worst earthquakes:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 data <span class="op">%&gt;%</span><span class="st"> </span>
